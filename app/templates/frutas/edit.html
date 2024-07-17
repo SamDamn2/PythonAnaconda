@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Editar Fruta</title>
+</head>
+<body>
+    <h1>Editar Fruta</h1>
+    <form action="{{ url_for('fruta.edit', id=fruta.id) }}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ fruta.nombre }}" required>
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" value="{{ fruta.color }}" required>
+        <label for="tamaño">Tamaño:</label>
+        <input type="text" id="tamaño" name="tamaño" value="{{ fruta.tamaño }}" required>
+        <label for="tfrutha">Tipo de fruta:</label>
+        <input type="text" id="tfrutha" name="tfrutha" value="{{ fruta.tfrutha }}" required>
+        <button type="submit">Actualizar Libro</button>
+    </form>
+</body>
+</html>

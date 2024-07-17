@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Editar tipo de fruta</title>
+</head>
+<body>
+    <h1>Editar tipo de fruta</h1>
+    <form action="{{ url_for('tfrutha.edit', id=tfrutha.id) }}" method="post">
+        <label for="nombret">Nombre:</label>
+        <input type="text" id="nombret" name="nombret" value="{{ tfrutha.nombret }}" required>
+        <button type="submit">Actualizar tipo</button>
+    </form>
+</body>
+</html>

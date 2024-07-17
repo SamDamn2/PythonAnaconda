@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Tipo de fruta</title>
+</head>
+<body>
+    <h1>Lista de tipos</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        {% for tfrutha in data %}
+            <tr>
+                <td>{{ tfrutha.id }}</td>
+                <td>{{ tfrutha.nombret }}</td>
+                <td>
+                    <a href="{{ url_for('tfrutha.edit', id=tfrutha.id) }}">Editar</a>
+                    <a href="{{ url_for('tfrutha.delete', id=tfrutha.id) }}">Eliminar</a>
+                    <!-- Agrega aquí el enlace para eliminar -->
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('tfrutha.add') }}">Agregar tipo</a>
+    <a href="{{ url_for('fruta.index') }}">Ir a Fruta</a>
+</body>
+</html>

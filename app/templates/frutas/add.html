@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Agregar Fruta</title>
+</head>
+<body>
+    <h1>Agregar Fruta</h1>
+    <form action="{{ url_for('fruta.add') }}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required>
+        <label for="tamaño">Tamaño:</label>
+        <input type="text" id="tamaño" name="tamaño" required>
+        <label for="tfrutha">Tipo de fruta:</label>
+
+        <select id="tfrutha" name="tfrutha">
+            {% for tfrutha in data %}
+                <option value="{{ tfrutha.id }}">{{ tfrutha.nombret }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Agregar Fruta</button>
+    </form>
+</body>
+</html>
